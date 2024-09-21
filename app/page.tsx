@@ -1,11 +1,11 @@
 'use client';
-import { Product } from '../types/common';
 import Header from '@/components/Header';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import PromoBanner from '@/components/PromoBanner';
 import { productsAPI } from '@/lib/product';
 import { formatCurrency } from '@/utils/formatCurrency';
-
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { Product } from '../types/common';
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -19,8 +19,9 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <PromoBanner />
       <Header />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-white">
         <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
           <h2 className="text-3xl font-bold">Products</h2>
         </div>
